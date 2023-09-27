@@ -9,7 +9,7 @@ import {
   persistStore,
   persistReducer,
   FLUSH,
-  REHYORATE,
+  REHYDRATE,
   PAUSE,
   PERSIST,
   PURGE,
@@ -22,14 +22,14 @@ const persistConfig = { key: "root", storage, version: 1};
 const persistedReducer = persistReducer(persistConfig, authReducer); 
 const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware)=>{
-    getDefaultMiddleware({
+  middleware: (getDefaultMiddleware) => {
+    return getDefaultMiddleware({
       serializableCheck: {
-        ignoreActions: [FLUSH, REHYORATE, PAUSE, PERSIST, PURGE, REGISTER]
+        ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
       }
-    })
+    });
   }
-})
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
