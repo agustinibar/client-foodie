@@ -18,7 +18,7 @@ import FlexBetween from "components/FlexBetween";
 
 
 const registerSchemma = yup.object().shape({
-    fisrtName: yup.string().required("required"),
+    firstName: yup.string().required("required"),
     lastName: yup.string().required("required"),
     email: yup.string().email("invalid email").required("required"),
     password: yup.string().required("required"),
@@ -33,7 +33,7 @@ const loginSchema = yup.object().shape({
 });
 
 const initialValueRegister = {
-    fisrtName: "",
+    firstName: "",
     lastName: "",
     email: "",
     password: "",
@@ -63,7 +63,7 @@ export const Form = () => {
         }
         formData.append('picturePath', values.picture.name)
         const savedUserResponse = await fetch(
-            "http://localgost:3001/auth/register",
+            "http://localhost:3001/auth/register",
             {
                 method:"POST",
                 body: formData 
@@ -79,7 +79,7 @@ export const Form = () => {
 
     const login = async (values, onSubmitProps)=>{
         const loggedInResponse = await fetch(
-            "http://localgost:3001/auth/login",
+            "http://localhost:3001/auth/login",
             {
                 method:"POST",
                 headers: {"Content-Type" : "application/json"},

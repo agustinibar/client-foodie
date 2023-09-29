@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Home } from "views/home/Home";
 import { Profile } from "views/profile/Profile";
 import { Login } from "views/login/Login";
@@ -8,9 +8,11 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
 
+
 function App() {
   const mode = useSelector((state)=> state.mode);
   const theme = useMemo(()=> createTheme(themeSettings(mode)), [mode]);
+  const isAuth = Boolean(useSelector((state)=> state.token));
 
   return (
     <BrowserRouter>
@@ -18,7 +20,7 @@ function App() {
         <CssBaseline/>
         <Routes>
           <Route path="/" element={<Login />}/>
-          <Route path="/home" element={<Home />}/>
+          <Route path="/home" element={isAuth ? <Home /> : <Navigate to={'/'}/>}/>
           <Route path="/profile/:userId" element={<Profile />}/>
         </Routes>
       </ThemeProvider>

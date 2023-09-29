@@ -19,7 +19,7 @@ export const Login = () => {
     >
         <Typography 
           fontWeight="bold"
-          variant="h4" 
+          variant="h3" 
           color="primary.main" 
         >
           Foodie Site Lab

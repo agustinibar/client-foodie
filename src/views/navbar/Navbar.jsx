@@ -42,7 +42,7 @@ export const Navbar = () => {
   const alt = theme.palette.background.alt;
   
 
-  const fullName = `Agustin Ibar`;
+  const fullName = user.firstName;
   
 
 
