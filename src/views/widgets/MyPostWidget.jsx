@@ -50,6 +50,7 @@ export const MyPostWidget = ({ picturePath }) => {
         setPost("");
       
     }
+    // console.log(picturePath)
     return(
         <WidgetWrapper>
             <FlexBetween gap="1.5rem">
