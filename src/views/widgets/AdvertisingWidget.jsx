@@ -21,7 +21,7 @@ export const AdvertisingWidget = () => {
             width="100%"
             height="auto"
             alt="advert"
-            src="http://localhost:3001/assets/donJulio.png"
+            src="https://foodie-site-api-rest.onrender.com/assets/donJulio.png"
             style={{ borderRadius: "0.75rem", margin: "0.75rem 0"}}/>
             <FlexBetween>
                 <Typography color={main}>Don Julio</Typography>

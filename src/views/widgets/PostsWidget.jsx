@@ -9,7 +9,7 @@ export const PostsWidget = ({ userId, isProfile=false }) => {
     const token = useSelector((state)=> state.token);
 
     const getPosts = async()=>{
-        const response = await fetch("http://localhost:3001/post", {
+        const response = await fetch("https://foodie-site-api-rest.onrender.com/post", {
             method: "GET",
             headers: {Authorization: `Bearer ${token}`}
         });
@@ -18,7 +18,7 @@ export const PostsWidget = ({ userId, isProfile=false }) => {
         dispatch(setPosts({ posts: data }));
     };
     const getUserPosts = async()=>{
-        const response = await fetch(`http://localhost:3001/post/${userId}/posts`, {
+        const response = await fetch(`https://foodie-site-api-rest.onrender.com/post/${userId}/posts`, {
             method: "GET",
             headers: {Authorization: `Bearer ${token}`}
         });

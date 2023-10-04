@@ -16,7 +16,7 @@ export const Profile = () => {
   const isNonMobileScreen = useMediaQuery("(min-width:1000px)");
 
   const getUser = async()=>{
-     const response = await fetch(`http://localhost:3001/users/${userId}`, {
+     const response = await fetch(`https://foodie-site-api-rest.onrender.com/users/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}`}
      })
@@ -52,7 +52,7 @@ export const Profile = () => {
         mt={isNonMobileScreen ? undefined : "2rem"}
         >
           <MyPostWidget picturePath={user.picturePath}/>
-          <PostsWidget userId={userId}/>
+          <PostsWidget userId={userId} isProfile/>
         </Box>
       </Box>
     </Box>
