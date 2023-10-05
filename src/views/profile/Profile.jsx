@@ -27,7 +27,7 @@ export const Profile = () => {
 
   useEffect(()=>{
     getUser();
-  }, [])
+  }, [userId])
   
   if(!user) return null;
   
