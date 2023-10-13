@@ -50,12 +50,12 @@ export const Navbar = () => {
     <FlexBetween gap="1.75rem">
           <Typography 
           fontWeight="bold"
-          variant="h4" // Utiliza variant para definir el tamaño de fuente según las variantes del tema
-          color="primary.main" // Utiliza color para definir el color del tema
+          variant="h4" 
+          color="primary.main"
           onClick={() => navigate("/home")}
           sx={{
             "&:hover": {
-              color: "primary.light", // Utiliza color para definir el color en el hover
+              color: "primary.light", 
               cursor: "pointer",
             },
           }}
@@ -83,7 +83,12 @@ export const Navbar = () => {
           <LightMode sx={{ color:dark, fontSize: "25px" }}/>
         )} 
       </IconButton>
-      <Message  sx={{ fontSize: "25px" }}/>
+      <IconButton onClick={() => navigate("/messages")}>
+      <Message  
+      
+      sx={{ fontSize: "25px" }}/>
+
+      </IconButton>
       <Notifications  sx={{ fontSize: "25px" }}/>
       <Help  sx={{ fontSize: "25px" }}/>
       <FormControl variant="standard" value={fullName}>
@@ -156,7 +161,9 @@ export const Navbar = () => {
           <LightMode sx={{ color:dark, fontSize: "25px" }}/>
         )} 
       </IconButton>
-      <Message  sx={{ fontSize: "25px" }}/>
+      <Message  
+      onClick={() => navigate("/messages")}
+      sx={{ fontSize: "25px" }}/>
       <Notifications  sx={{ fontSize: "25px" }}/>
       <Help  sx={{ fontSize: "25px" }}/>
       <FormControl variant="standard" value={fullName}>

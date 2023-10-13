@@ -6,14 +6,14 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { setFriends } from "../../redux/index"
 
-export const FriendListWidget = ({ userId }) => {
+export const FriendListWidget = ({ userId, setSelectedFriend }) => {
     const dispatch = useDispatch();
     const { palette } = useTheme();
     const token = useSelector((state)=> state.token);
     const friends = useSelector((state)=> state.user.friends);
 
   const getFriends = async()=>{
-    const response = await fetch(`https://foodie-site-api-rest.onrender.com/users/${userId}/friends`,
+    const response = await fetch(`http://localhost:3001/users/${userId}/friends`,
     {
         method: "GET",
         headers: { Authorization: `Bearer ${token}`}
@@ -44,6 +44,7 @@ export const FriendListWidget = ({ userId }) => {
                 name={`${friend.firstName} ${friend.lastName}`}
                 subtitle={friend.occupation}
                 userPicturePath={friend.picturePath}
+                setSelectedFriend={setSelectedFriend}
                 />
             ))}
         </Box>

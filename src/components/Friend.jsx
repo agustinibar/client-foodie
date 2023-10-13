@@ -1,8 +1,8 @@
-import { PersonAddOutlined, PersonRemoveOutlined } from "@mui/icons-material"
+import { PersonAddOutlined, PersonRemoveOutlined, ChatBubbleOutline } from "@mui/icons-material"
 import { Box,
     IconButton,
     Typography,
-    useTheme
+    useTheme,
  } from "@mui/material"
 import { useDispatch, useSelector } from "react-redux"
 import { setFriends } from "../redux/index"
@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom"
 import FlexBetween from "./FlexBetween"
 import { useEffect } from "react"
 
-export const Friend = ({ friendId, name, subtitle, userPicturePath}) => {
+export const Friend = ({ friendId, name, subtitle, userPicturePath, setSelectedFriend}) => {
     const { palette } = useTheme();
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -31,7 +31,7 @@ export const Friend = ({ friendId, name, subtitle, userPicturePath}) => {
     
     
     const patchFriend = async()=>{
-        const response = await fetch(`https://foodie-site-api-rest.onrender.com/users/${_id}/${friendId}`,{
+        const response = await fetch(`http://localhost:3001/users/${_id}/${friendId}`,{
             method:"PATCH",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -76,6 +76,10 @@ export const Friend = ({ friendId, name, subtitle, userPicturePath}) => {
                     {subtitle}
                 </Typography>
             </Box>
+        <ChatBubbleOutline 
+        sx={{ color: primaryDark, cursor:"pointer" }}
+        onClick={()=> setSelectedFriend({ friendId, name })}
+        />
         </FlexBetween>
         <IconButton
         onClick={()=>patchFriend()}
