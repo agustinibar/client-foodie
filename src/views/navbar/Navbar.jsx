@@ -60,7 +60,7 @@ export const Navbar = () => {
             },
           }}
         >
-          Foodie Site Lab
+          Xapport
         </Typography>
 
       {isNonMobileScreen && (

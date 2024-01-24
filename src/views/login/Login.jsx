@@ -22,7 +22,7 @@ export const Login = () => {
           variant="h3" 
           color="primary.main" 
         >
-          Foodie Site Lab
+          Xapport
         </Typography>
         <Box
         width={isNonMobileScreen ? "50%" : "93%"}
@@ -36,7 +36,7 @@ export const Login = () => {
           variant="h5"
           sx={{ mb: "1.5rem"}}
           >
-            Welcome to Foodie, the Social Media for Chefs & restauranteurs!
+            Welcome to Xapport, the Social Media to help you with mental health!
           </Typography>
           <Form/>
         </Box>

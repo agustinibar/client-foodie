@@ -38,6 +38,7 @@ export const PostsWidget = ({ userId, isProfile=false }) => {
     // posts.map((post)=>{
     //   console.log(post.userPicturePath)
     // })
+    console.log(posts)
     return (
             <>
                 {Array.isArray(posts) ? (
