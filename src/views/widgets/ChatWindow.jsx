@@ -60,17 +60,19 @@ export const ChatWindow = ({ friend, onClose }) => {
 
   return (
     <Paper
-       elevation={3}
-      sx={{
-        position: 'fixed',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: '400px',
-        maxHeight: '80vh',
-        overflow: 'auto',
-      }}
-    >
+    elevation={3}
+    sx={{
+      position: 'absolute',
+      top: '57%',
+      left: '60%',  
+      transform: 'translate(-50%, -50%)',
+      width: '60%',
+      height:'500px',
+      maxHeight: '80vh',
+      overflow: 'auto',
+      marginLeft: '20px' 
+    }}
+  >
       <Box p={2}>
         <Box display="flex" justifyContent="space-between">
           <Typography variant="h5">{friend.name}</Typography>
@@ -93,7 +95,7 @@ export const ChatWindow = ({ friend, onClose }) => {
             </div>
           ))}
         </Box>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} sx={{ position: 'fixed', bottom: 0, width: '100%', padding: 2 }}>
           <Grid item xs={9}>
             <Input
               value={newMessage}

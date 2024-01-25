@@ -8,6 +8,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
 import { Chat } from "views/chat/Chat";
+import { Groups } from "views/Groups/Groups";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/home" element={isAuth ? <Home /> : <Navigate to={'/'}/>}/>
           <Route path="/profile/:userId" element={<Profile />}/>
           <Route path="/messages" element={<Chat />}/>
+          <Route path="/groups" element={<Groups />}/>
         </Routes>
       </ThemeProvider>
     </BrowserRouter>

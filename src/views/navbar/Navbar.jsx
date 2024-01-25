@@ -89,7 +89,11 @@ export const Navbar = () => {
       sx={{ fontSize: "25px" }}/>
 
       </IconButton>
-      <Notifications  sx={{ fontSize: "25px" }}/>
+      <IconButton onClick={()=>{ navigate("/groups")}}>
+
+      <Notifications sx={{ fontSize: "25px" }}/>
+
+      </IconButton>
       <Help  sx={{ fontSize: "25px" }}/>
       <FormControl variant="standard" value={fullName}>
         <Select 
@@ -164,7 +168,9 @@ export const Navbar = () => {
       <Message  
       onClick={() => navigate("/messages")}
       sx={{ fontSize: "25px" }}/>
-      <Notifications  sx={{ fontSize: "25px" }}/>
+      <Notifications  
+      onClick={()=>{ navigate("/groups")}}
+      sx={{ fontSize: "25px" }}/>
       <Help  sx={{ fontSize: "25px" }}/>
       <FormControl variant="standard" value={fullName}>
         <Select 
