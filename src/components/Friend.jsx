@@ -31,7 +31,7 @@ export const Friend = ({ friendId, name, subtitle, userPicturePath, setSelectedF
     
     
     const patchFriend = async()=>{
-        const response = await fetch(`http://localhost:3001/users/${_id}/${friendId}`,{
+        const response = await fetch(`https://foodie-site-api-rest.onrender.com/users/${_id}/${friendId}`,{
             method:"PATCH",
             headers: {
                 Authorization: `Bearer ${token}`,
